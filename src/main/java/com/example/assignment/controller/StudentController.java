@@ -1,7 +1,6 @@
 package com.example.assignment.controller;
 
 import com.example.assignment.entity.Student;
-import com.example.assignment.repository.StudentRepository;
 import com.example.assignment.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
