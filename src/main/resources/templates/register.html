@@ -1,10 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-<form action=""></form>
+<form action="#" th:action="@{/add}" method="post">
+    Name <input type="text" name="name"><br>
+    Address<input type="text" name="addr"><br>
+    University<input type="text" name="school"><br>
+    Major<input type="text" name="major"><br>
+    <button  type="submit">Register</button>
+</form>
+
 </body>
 </html>

@@ -24,7 +24,6 @@
             <td th:text="${student.school}">school</td>
             <td th:text="${student.major}">major</td>
             <td><a th:href="@{http://localhost:8090/update/{id}(id=${student.id})}">Edit</a>
-                <!--<a onsubmit="delete_click()" th:href="@{http://localhost:8090/delete/{id}(id=${student.id})}">삭제</a>-->
                 <form action="#" th:action="@{/delete/{id}(id=${student.id})}" method="post" ><button onsubmit="delete_click()" type="submit">Delete</button></form>
             </td>
         </tr>

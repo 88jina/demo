@@ -36,11 +36,13 @@ public class StudentController {
         return mv;
     }
     //학생 신규 입력
-    @PostMapping("/add")
-    public Student addStudent(@RequestBody Student student) {
-        return service.saveStudent(student);
+    @PostMapping(value = "/add", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    public ModelAndView addStudent(Student student) {
+        service.saveStudent(student);
+        ModelAndView mv = new ModelAndView("alert");
+        mv.addObject("msg","Registered Successfully");
+        return mv;
     }
-
 
     //이름으로 검색
     @GetMapping("/student")
@@ -76,7 +78,7 @@ public class StudentController {
     }
 
     //학생 정보 수정
-    @PostMapping(value = "/update", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/edit", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ModelAndView updateStudent(Student student) {
         service.updateStudent(student);
         String msg = "Edited Successfully";

@@ -40,7 +40,8 @@ public class StudentService {
     }
 
     public Student updateStudent(Student student){
-        Student existingStudent = studentRepository.findById(student.getId()).orElse(null);
+        Student existingStudent = studentRepository.findByName(student.getName());
+        existingStudent.setId(student.getId());
         existingStudent.setName(student.getName());
         existingStudent.setSchool(student.getSchool());
         existingStudent.setMajor(student.getMajor());
