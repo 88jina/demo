@@ -7,13 +7,21 @@
     <title>Title</title>
 </head>
 <body>
-<table>
-    <tr>
-        <th>Name</th>
-    </tr>
-    <tr th:each="student : ${students}">
-        <td th:text="${student.name}">name</td>
-    </tr>
-</table>
+<div align="center">
+    <h1>학생 이름 검색</h1>
+    <form class="m-t" role="form" th:action="@{/student/#{name}}"></form>
+</div>
+<div align="center">
+    <table>
+        <tr>
+            <td>이름</td>
+        </tr>
+        <tr th:each="students : ${students}">
+            <td><a th:href="@{http://localhost:8090/student/${students.name}}"></a></td>
+        </tr>
+    </table>
+
+</div>
+
 </body>
 </html>
