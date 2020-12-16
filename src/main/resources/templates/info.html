@@ -7,8 +7,9 @@
 </head>
 <body>
 <div align="center">
+    <h1>Student Information</h1>
     <table>
-        <thead>
+
         <tr>
             <td>이름</td>
             <td>거주지</td>
@@ -16,19 +17,26 @@
             <td>전공</td>
             <td>비고</td>
         </tr>
-        </thead>
-        <tbody>
+
         <tr th:each="student : ${student}">
             <td th:text="${student.name}">name</td>
             <td th:text="${student.addr}">addr</td>
             <td th:text="${student.school}">school</td>
             <td th:text="${student.major}">major</td>
-            <td><a th:href="@{http://localhost:8090/}"></a></td>
+            <td><a th:href="@{http://localhost:8090/update/{id}(id=${student.id})}">Edit</a>
+                <!--<a onsubmit="delete_click()" th:href="@{http://localhost:8090/delete/{id}(id=${student.id})}">삭제</a>-->
+                <form action="#" th:action="@{/delete/{id}(id=${student.id})}" method="post" ><button onsubmit="delete_click()" type="submit">Delete</button></form>
+            </td>
         </tr>
-        </tbody>
     </table>
 
 </div>
 
+<script type="text/javascript">
+    function delete_click(){
+        alert('Deleted Successfully');
+        window.location=document.referrer;
+            }
+</script>
 </body>
 </html>

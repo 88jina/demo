@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"
-      xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -13,10 +12,6 @@
     <form action="#" th:action="@{/student}" method="get">
         <input type="text" name="name">
         <button type="submit">SEARCH</button>
-    </form>
-
-    <form action="#" th:action="@{/adding}" method="get">
-        <button type="submit">Register</button>
     </form>
 
     <table border="0.5">

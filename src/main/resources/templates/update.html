@@ -1,10 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
+<div align="center">
 
+    <h1>Edit Info Page</h1>
+    <form action="#" th:action="@{/update}" th:object="${student}" method="post">
+        <table border="0" cellpadding="0">
+            <tr>
+                <td>Name</td>
+                <td><input type="text" th:field="*{name}"></td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td><input type="text" th:field="*{addr}"></td>
+            </tr>
+            <tr>
+                <td>School</td>
+                <td><input type="text" th:field="*{school}"></td>
+            </tr>
+            <tr>
+                <td>Major</td>
+                <td><input type="text" th:field="*{major}"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button onsubmit="button_click()" type="submit">Save</button></td>
+            </tr>
+        </table>
+    </form>
+</div>
+<script type="text/javascript">
+    function button_click(){
+        alert('수정되었습니다.');
+        window.location=document.referrer;
+    }
+</script>
 </body>
 </html>

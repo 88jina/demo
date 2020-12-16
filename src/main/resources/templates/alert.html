@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script th:inline="javascript" type="text/javascript">
+    /*<![CDATA[*/
+
+    var message = /*[[${msg}]]*/ 'default';
+
+
+    /*]]>*/
+
+        alert(message);
+        location.replace("http://localhost:8090/students");
+
+</script>
+</body>
+</html>
